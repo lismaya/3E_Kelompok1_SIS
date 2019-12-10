@@ -65,9 +65,9 @@
           <div class="col-8">
             <div class="icheck-primary">
               <input type="checkbox" id="agreeTerms" name="terms" value="agree">
-              <label for="agreeTerms">
+              <!-- <label for="agreeTerms">
                I agree to the <a href="#">terms</a>
-              </label>
+              </label> -->
             </div>
           </div>
           <!-- /.col -->
@@ -78,7 +78,7 @@
         </div>
       </form>
 
-      <div class="social-auth-links text-center">
+      <!-- <div class="social-auth-links text-center">
         <p>- OR -</p>
         <a href="#" class="btn btn-block btn-primary">
           <i class="fab fa-facebook mr-2"></i>
@@ -88,9 +88,9 @@
           <i class="fab fa-google-plus mr-2"></i>
           Sign up using Google+
         </a>
-      </div>
+      </div> -->
 
-      <a href="login.html" class="text-center">I already have a membership</a>
+      <!-- <a href="login.html" class="text-center">I already have a membership</a> -->
     </div>
     <!-- /.form-box -->
   </div><!-- /.card -->
