@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/lte', function () {
-    return view('index');
+Route::get('/login', function () {
+    return view('auth/login');
+});
+Route::get('/register', function () {
+    return view('auth/register');
 });
