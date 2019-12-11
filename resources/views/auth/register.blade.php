@@ -28,38 +28,76 @@
     <div class="card-body register-card-body">
       <p class="login-box-msg">Register a new membership</p>
 
-      <form action="../../index.html" method="post">
+      <form action="{{ route('register')}}" method="post">
+        {{csrf_field()}}
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Full name">
+          <input type="text" class="form-control {{ $errors->has('name') ? 'is-invalid' : ' '}}" placeholder="Full name" name="name" value="{{old('name')}}" required autofocus>
+
+
+
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
             </div>
           </div>
+
+          @if($errors->has('name'))
+          <div class="invalid-feedback">
+            {{ $errors->first('name')}}
+          </div>
+          @endif
+
         </div>
         <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Email">
+          <input type="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : ' '}}" placeholder="Email" name="email" value="{{old('email')}}" required>
+
+
+
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
             </div>
           </div>
+          @if($errors->has('email'))
+          <div class="invalid-feedback">
+            {{ $errors->first('email')}}
+          </div>
+          @endif
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password">
+          <input type="password" class="form-control {{ $errors->has('password') ? 'is-invalid' : ' '}}" placeholder="Password" name="password" required>
+
+
+
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
             </div>
           </div>
+
+          @if($errors->has('password'))
+          <div class="invalid-feedback">
+            {{ $errors->first('password')}}
+          </div>
+          @endif
+
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Retype password">
+          <input type="password" class="form-control {{ $errors->has('password_confirmation') ? 'is-invalid' : ' '}}" placeholder="Retype password" name="password_confirmation" required>
+
+
+
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
             </div>
           </div>
+
+          @if($errors->has('password_confirmation'))
+          <div class="invalid-feedback">
+            {{ $errors->first('password_confirmation')}}
+          </div>
+          @endif
         </div>
         <div class="row">
           <div class="col-8">
